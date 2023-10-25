@@ -1,0 +1,14 @@
+<h2>App 2: Cambiar los estilos de los elementos según el país en una lista</h2>
+<div class="container">
+  <div
+    *ngFor="let pais of paises"
+    class="pais"
+    [ngStyle]="{
+      color: getColor(pais.nombre),
+      'background-color': getBackgroundColor(pais.nombre)
+    }"
+  >
+    <img [src]="getFlag(pais.nombre)" alt="{{ pais.nombre }} flag" />
+    {{ pais.nombre }}
+  </div>
+</div>

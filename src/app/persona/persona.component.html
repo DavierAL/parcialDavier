@@ -1,0 +1,15 @@
+<h2>App 1: Gestión de Estilos según la Edad de los Usuarios</h2>
+<div class="container">
+  <div *ngFor="let persona of personas" 
+       class="persona"
+       [ngClass]="{
+         'menor-edad': persona.edad < 18,
+         'adulto-joven': persona.edad >= 18 && persona.edad <= 30,
+         'adulto': persona.edad > 30
+       }">
+    {{persona.nombre}} - {{persona.edad}}
+    <img *ngIf="persona.edad < 18" src="https://www.svgrepo.com/show/420351/avatar-boy-kid.svg">
+    <img *ngIf="persona.edad >= 18 && persona.edad <= 30" src="https://www.svgrepo.com/show/420334/avatar-bad-breaking.svg">
+    <img *ngIf="persona.edad > 30" src="https://www.svgrepo.com/show/420363/avatar-elderly-grandma.svg">
+  </div>
+</div>
